@@ -5,17 +5,18 @@ const parseUrl = require('./framework/parseUrl')
 const mongoose = require('mongoose');
 
 const PORT = process.env.PORT ?? 5000;
+const MONGOURI = process.env.MONGOURI ?? '';
 
 const app = new Application();
 
 app.use(jsonParser);
-app.use(parseUrl('http://localhost:5000'));
+app.use(parseUrl(`http://localhost:${PORT}`));
 
 app.addRouter(userRouter);
 
 const start = async () => {
     try{
-        await mongoose.connect('mongodb+srv://user:123@cluster0.12ugx05.mongodb.net/?appName=Cluster0');
+        await mongoose.connect(MONGOURI);
         app.listen(PORT, () => console.log(`Server started on PORT ${PORT}`));
     } catch (e){
         console.log(e)

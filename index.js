@@ -10,8 +10,6 @@ dotenv.config();
 const PORT = process.env.PORT ?? 5000;
 const MONGOURI = process.env.MONGOURI ?? '';
 
-console.log(MONGOURI);
-
 const app = new Application();
 
 app.use(jsonParser);

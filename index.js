@@ -3,9 +3,14 @@ const userRouter = require('./src/user-router');
 const jsonParser = require('./framework/parseJson');
 const parseUrl = require('./framework/parseUrl')
 const mongoose = require('mongoose');
+const dotenv = require('dotenv');
+
+dotenv.config();
 
 const PORT = process.env.PORT ?? 5000;
 const MONGOURI = process.env.MONGOURI ?? '';
+
+console.log(MONGOURI);
 
 const app = new Application();
 

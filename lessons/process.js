@@ -1,8 +1,8 @@
-// const dotenv = require('dotenv');
-//
-// dotenv.config();
-//
-// console.log(process.env.PORT);
-// console.log(process.env.NODE_ENV);
+const dotenv = require('dotenv');
 
-console.log(process.argv)
+dotenv.config();
+
+console.log(process.env.PORT);
+console.log(process.env.NODE_ENV);
+
+console.log(process.argv);

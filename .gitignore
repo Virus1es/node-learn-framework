@@ -1,6 +1,5 @@
-.idea/
+/.idea/
 .env
-!.env.template
 
 # Logs
 logs
